@@ -1,6 +1,6 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 
-export const axiosClient = () => {
+const axiosInstance = () => {
 
   const defaultOptions: AxiosRequestConfig = {
     baseURL: 'http://localhost:8000',
@@ -31,3 +31,4 @@ const handleError = (error: any) => {
   // }
   return Promise.reject(error)
 }
+export default axiosInstance()
