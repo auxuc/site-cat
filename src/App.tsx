@@ -1,18 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
+import { FC } from 'react';
+import { BrowserRouter, Route, Router, Routes } from 'react-router-dom'
 import './App.css';
-import { BrowserRouter, Route ,Switch} from 'react-router-dom';
-import Register from './Module/Register';
+import { RegisterCat } from './Module/RegisterCat/RegisterCat'
 
 export const routes = {
-  home: '/home',
+  register: '/register',
 }
-function App() {
+const App: FC = () => {
   return (
+  //   <RegisterCat/>
     <BrowserRouter>
-      <Switch>
-        <Route path={routes.home} component={Register} />
-      </Switch>
+        <Routes>
+          <Route path={routes.register} element={<RegisterCat/>}/>
+        </Routes>
     </BrowserRouter>
   )
 }
