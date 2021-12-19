@@ -13,7 +13,7 @@ const defaultValues: ICat = {
 export const RegisterCat: FC = () => {
   const classes = useStyles()
   const [data, setData] = useState<ICat>({...defaultValues})
-console.log(data)
+
   return (
     <div className={classes.wrapper}>
       <h2>Add a new Cat</h2>

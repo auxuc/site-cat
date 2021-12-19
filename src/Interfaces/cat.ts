@@ -5,3 +5,7 @@ export interface ICat {
   description: string
   location: string
 }
+
+export interface IListCats {
+  data:ICat[]
+}

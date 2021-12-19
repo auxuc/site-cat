@@ -2,6 +2,8 @@ import { FC } from "react";
 import { useForm } from "react-hook-form";
 import { ICat } from "../../Interfaces/cat";
 import { IForm } from "../../Interfaces/form";
+import { message } from "../../Utils/message";
+import { Button } from "../button/button";
 import { Input } from "../input/input";
 
 const defaultValues = {
@@ -22,14 +24,14 @@ export const Form: FC<IForm> = (props) => {
         labelText="Name"
         name="name"
         useFormProps={rest}
-        registerProps={{ required: true }}
+        registerProps={{ required: message.required, maxLength: message.maxLength  }}
         inputAttr={{ maxLength: 50 }}
       />
             <Input
         labelText="Breed"
         name="breed"
         useFormProps={rest}
-        registerProps={{ required: true }}
+        registerProps={{ required: message.required, maxLength: message.maxLength  }}
         inputAttr={{ maxLength: 50 }}
       />
                   <Input
@@ -37,24 +39,26 @@ export const Form: FC<IForm> = (props) => {
         name="age"
         type="number"
         useFormProps={rest}
-        registerProps={{ required: true }}
-        inputAttr={{ maxLength: 3 }}
+        registerProps={{ required: message.required }}
+        inputAttr={{ max: 100, min: 0 }}
+
       />
                   <Input
         labelText="Description"
         name="description"
         useFormProps={rest}
-        registerProps={{ required: false }}
+        registerProps={{ maxLength: message.maxLength }}
         inputAttr={{ maxLength: 200 }}
       />
                   <Input
         labelText="Location"
         name="location"
         useFormProps={rest}
-        registerProps={{ required: true }}
+        registerProps={{ required: message.required, maxLength: message.maxLength }}
         inputAttr={{ maxLength: 50 }}
       />
-      <input type="submit" />
+      <Button type='submit' isDisabled={false} text="Submit"/>
+      {/* <input type="submit" /> */}
     </form>
   );
 };

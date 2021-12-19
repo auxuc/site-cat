@@ -24,8 +24,6 @@ export default createUseStyles({
   },
   error: {
     fontSize: fontSize.smallComment,
-  },
-  messageError: {
     color: defaultColor.warningRed,
   },
   inputError: {
