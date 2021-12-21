@@ -20,8 +20,8 @@ export const Header: FC = () => {
           <Link className={classes.navItem} to={path.REGISTER}>
             <span>Add cat</span>
           </Link>
-          <Link className={classes.navItem} to={path.EDIT}>
-            <span>Edit cat</span>
+          <Link className={classes.navItem} to={path.MAP}>
+            <span>Cats location</span>
           </Link>
         </div>
       </div>

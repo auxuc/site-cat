@@ -1,4 +1,5 @@
 export interface ICat {
+  uuid: string
   name:string
   breed: string
   age: number

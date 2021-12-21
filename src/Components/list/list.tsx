@@ -9,8 +9,8 @@ export const List: FC<IListCats> = (props) => {
   return (
     <div className={classes.wrapper}>
       <div className={classes.wrapperList}>
-        {props.data.map((cat: ICat, index: number) => (
-          <Card {...cat} key={`${cat.name}${index}`} />
+        {props.data.map((cat: ICat) => (
+          <Card {...cat} key={cat.uuid} />
         ))}
       </div>
       {!props.data.length && (
