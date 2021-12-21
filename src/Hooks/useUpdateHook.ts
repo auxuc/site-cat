@@ -4,7 +4,6 @@ import { ICat } from '../Interfaces/cat'
 
 
 const putService = async (dataCat:ICat): Promise<void> => {
-  console.log(dataCat)
   await axios.put<ICat>(`cats/update`, dataCat)
 }
 

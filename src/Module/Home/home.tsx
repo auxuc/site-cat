@@ -10,7 +10,7 @@ export const Home: FC = () => {
   if (isLoading) {
     return <Loading />
   }
-  console.log(service)
+
   return (
     <div>
       <List data={service as ICat[]} />

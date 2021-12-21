@@ -5,7 +5,7 @@ import useStyles from "./styles";
 
 export const LocationList: FC<IDataLoc> = ({data}) => {
   const classes = useStyles();
-  console.log(data)
+
   return (
     <div className={classes.wrapper}>
       <div className={classes.wrapperList}>
