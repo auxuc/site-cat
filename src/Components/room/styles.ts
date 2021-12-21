@@ -14,9 +14,4 @@ export default createUseStyles({
   text: {
     textAlign: 'center'
   },
-  rightSide: {
-    display: 'flex',
-    justifyContent: 'right',
-    textAlign: 'justify',
-  },
 });

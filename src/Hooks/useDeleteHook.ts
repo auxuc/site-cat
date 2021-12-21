@@ -2,12 +2,12 @@ import { useMutation } from 'react-query'
 import axios from '../Axios/axiosInstance'
 import { ICat } from '../Interfaces/cat'
 
-const postService = async (dataCat:ICat): Promise<void> => {
-  await axios.post<ICat>(`cats/create`, dataCat)
+const deleteService = async (uuid: string): Promise<void> => {
+  await axios.delete<ICat>(`cats/delete/${uuid}`)
 }
 
-export const usePostService = () => {
-  const getServiceQuery = useMutation(postService)
+export const useDeleteService = () => {
+  const getServiceQuery = useMutation(deleteService)
 
   return {
     service: getServiceQuery.mutateAsync,

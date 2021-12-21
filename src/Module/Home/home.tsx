@@ -1,19 +1,19 @@
-import { FC } from 'react'
-import { List } from '../../Components/list/list'
-import { ICat } from '../../Interfaces/cat';
+import { FC } from "react";
+import { List } from "../../Components/list/list";
+import { Loading } from "../../Components/loading/loading";
+import { useGetService } from "../../Hooks/useGetHook";
+import { ICat } from "../../Interfaces/cat";
 
-
-const defaultValues: ICat = {
-  name: "test",
-  breed: "test",
-  age: 5,
-  description: "test",
-  location: "test"
-};
 export const Home: FC = () => {
+  const { service, isLoading } = useGetService()
+
+  if (isLoading) {
+    return <Loading />
+  }
+
   return (
-    <div >
-      <List data={[defaultValues]} />
-      </div>
+    <div>
+      <List data={service as ICat[]} />
+    </div>
   );
 };

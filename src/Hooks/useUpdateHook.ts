@@ -2,13 +2,13 @@ import { useMutation } from 'react-query'
 import axios from '../Axios/axiosInstance'
 import { ICat } from '../Interfaces/cat'
 
-const postService = async (dataCat:ICat): Promise<void> => {
-  await axios.post<ICat>(`cats/create`, dataCat)
+
+const putService = async (dataCat:ICat): Promise<void> => {
+  await axios.put<ICat>(`cats/update`, dataCat)
 }
 
-export const usePostService = () => {
-  const getServiceQuery = useMutation(postService)
-
+export const usePutService = () => {
+  const getServiceQuery = useMutation(putService)
   return {
     service: getServiceQuery.mutateAsync,
     isLoading: getServiceQuery.isLoading,
